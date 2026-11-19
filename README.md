@@ -26,8 +26,8 @@ access control: without one, no interaction is possible.
 ## Contract
 
 - Network: BNB Smart Chain (chain ID 56)
-- Contract: `TBD` (deployed address added here after deployment)
-- Source: [`src/AgentStreak.sol`](src/AgentStreak.sol), verified on BscScan
+- Contract: [`0x2993602cb38eC33ff90AFcDdB3110Dd49A5C171B`](https://bscscan.com/address/0x2993602cb38eC33ff90AFcDdB3110Dd49A5C171B) (deployed 2026-11-19, block 134465464)
+- Source: [`src/AgentStreak.sol`](src/AgentStreak.sol), Sourcify-verified (exact match, creation + runtime)
 - The contract holds no funds and has **no owner functions**: nothing to
   mint, pause, withdraw, or change after deployment. The deployer key has no
   ongoing power over the contract.
