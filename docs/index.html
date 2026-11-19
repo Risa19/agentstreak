@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AgentStreak — Daily check-in for Agent ID holders</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 640px; margin: 2rem auto; padding: 0 1rem; color: #1a1a1a; line-height: 1.5; }
+  h1 { font-size: 1.8rem; margin-bottom: 0.2rem; }
+  .sub { color: #555; margin-top: 0; }
+  .card { border: 1px solid #ddd; border-radius: 12px; padding: 1rem 1.2rem; margin: 1rem 0; }
+  .stats { display: flex; gap: 2rem; flex-wrap: wrap; }
+  .stat b { display: block; font-size: 1.6rem; }
+  .stat span { color: #555; font-size: 0.9rem; }
+  button { background: #f0b90b; border: none; border-radius: 8px; padding: 0.7rem 1.4rem; font-size: 1rem; cursor: pointer; }
+  button:disabled { background: #ddd; cursor: not-allowed; }
+  #status { color: #555; font-size: 0.95rem; min-height: 1.4em; }
+  code { background: #f4f4f4; padding: 0.1rem 0.35rem; border-radius: 4px; font-size: 0.9em; word-break: break-all; }
+  .small { font-size: 0.85rem; color: #666; }
+  ul { padding-left: 1.2rem; }
+  li { margin-bottom: 0.3rem; font-size: 0.95rem; }
+  a { color: #1a73e8; }
+</style>
+</head>
+<body>
+<h1>🔥 AgentStreak</h1>
+<p class="sub">Daily check-in for Binance Agent ID holders. Hold an Agent ID, check in once a day, build your streak.</p>
+
+<div class="card">
+  <button id="connectBtn">Connect wallet</button>
+  <p id="status">Not connected. Use any wallet with BSC (MetaMask, OKX, Binance Wallet extension).</p>
+  <div id="account" style="display:none">
+    <p>Wallet: <code id="addr"></code></p>
+    <p>Agent ID: <b id="hasId">—</b></p>
+    <div class="stats">
+      <div class="stat"><b id="streak">—</b><span>day streak</span></div>
+      <div class="stat"><b id="myTotal">—</b><span>your check-ins</span></div>
+    </div>
+    <p><button id="checkinBtn" disabled>Check in today</button></p>
+  </div>
+</div>
+
+<div class="card">
+  <h3 style="margin-top:0">Everyone</h3>
+  <div class="stats">
+    <div class="stat"><b id="totalUsers">—</b><span>Agent ID holders checked in</span></div>
+    <div class="stat"><b id="totalCheckins">—</b><span>total check-ins</span></div>
+  </div>
+  <h4>Recent check-ins</h4>
+  <ul id="recent"><li>Loading…</li></ul>
+</div>
+
+<div class="card small">
+  <p><b>Contract (BNB Chain):</b> <code id="contractAddr">deploying soon</code></p>
+  <p>Streaks and check-in counts are on-chain reputation only. They have no cash value, no token is issued, and no reward of any kind is promised. The contract holds no funds and has no owner functions. Source code: <a href="https://github.com/Risa19/agentstreak">github.com/Risa19/agentstreak</a>.</p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/ethers@6.13.4/dist/ethers.umd.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
